@@ -86,6 +86,11 @@ services:
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
+        - "admin-api.vijay:${DOCKER_HOST_IP}"
+        - "auth.vijay:${DOCKER_HOST_IP}"
+        - "api.vijay:${DOCKER_HOST_IP}"
+        - "tax.vijay:${DOCKER_HOST_IP}"
+        - "web-api.vijay:${DOCKER_HOST_IP}"
       ports:
         - "${WORKSPACE_SSH_PORT}:22"
       tty: true
