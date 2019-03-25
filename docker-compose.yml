@@ -86,11 +86,6 @@ services:
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-        - "admin-api.vijay:${DOCKER_HOST_IP}"
-        - "auth.vijay:${DOCKER_HOST_IP}"
-        - "api.vijay:${DOCKER_HOST_IP}"
-        - "tax.vijay:${DOCKER_HOST_IP}"
-        - "web-api.vijay:${DOCKER_HOST_IP}"
       ports:
         - "${WORKSPACE_SSH_PORT}:22"
       tty: true
@@ -152,11 +147,6 @@ services:
         - "9000"
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-        - "admin-api.vijay:${DOCKER_HOST_IP}"
-        - "auth.vijay:${DOCKER_HOST_IP}"
-        - "api.vijay:${DOCKER_HOST_IP}"
-        - "tax.vijay:${DOCKER_HOST_IP}"
-        - "web-api.vijay:${DOCKER_HOST_IP}"
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
         - DOCKER_HOST=tcp://docker-in-docker:2375
@@ -217,9 +207,17 @@ services:
         frontend:
           aliases:
             - admin-api.vijay
+            - auth.vijay
+            - api.vijay
+            - tax.vijay
+            - web-api.vijay
         backend:
           aliases:
             - admin-api.vijay
+            - auth.vijay
+            - api.vijay
+            - tax.vijay
+            - web-api.vijay
 
 ### Apache Server ########################################
     apache2:
