@@ -322,6 +322,22 @@ RUN if [ ${INSTALL_MEMCACHED} = true ]; then \
     && docker-php-ext-enable memcached \
 ;fi
 
+ARG INSTALL_MEMCACHE=true
+
+RUN if [ ${INSTALL_MEMCACHE} = true ]; then \
+    # Install the php memcached extension
+    curl -L -o /tmp/memcache.tar.gz "https://github.com/websupport-sk/pecl-memcache/archive/NON_BLOCKING_IO_php7.tar.gz"; \
+    mkdir -p /usr/lib/php/memcache \
+    && tar -C /usr/lib/php/memcache -zxvf /tmp/memcache.tar.gz --strip 1 \
+    && ( \
+        cd /usr/lib/php/memcache \
+        && phpize \
+        && ./configure \
+        && make -j$(nproc) \
+        && make install \
+    ) \
+;fi
+
 ###########################################################################
 # Exif:
 ###########################################################################
