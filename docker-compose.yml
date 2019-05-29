@@ -211,6 +211,7 @@ services:
             - api.vijay
             - tax.vijay
             - web-api.vijay
+            - w-admin-api.vijay
         backend:
           aliases:
             - admin-api.vijay
@@ -218,6 +219,7 @@ services:
             - api.vijay
             - tax.vijay
             - web-api.vijay
+            - w-admin-api.vijay
 
 ### Apache Server ########################################
     apache2:
