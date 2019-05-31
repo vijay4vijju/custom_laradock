@@ -7,8 +7,22 @@
     <a href="https://zalt.me"><img src="http://forthebadge.com/images/badges/built-by-developers.svg" alt="forthebadge" width="240" ></a>
 </p>
 
+##Changes
+
+Copy .env.example 
+```cp .env.example .env```
+
+Change `APP_CODE_PATH_HOST` key if required.
+
+Configure nginx sites based on your paths same hosts name update in docker-compose.yml under nginx networks. 
+
+
+
+
+
 
 ##Custom setup for memcache
+```code
 apt-get install wget
 
 wget http://pecl.php.net/get/memcache-2.2.4.tgz
@@ -29,3 +43,4 @@ found in the directory /etc/php.d
 touch /etc/php.d/memcached.ini
 
 echo 'extension=memcache.so' > /etc/php.d/memcached.ini
+```
