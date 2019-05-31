@@ -38,24 +38,26 @@ docker-compose up -d nginx mysql phpmyadmin redis workspace memcached beanstalkd
 
 ##Custom setup for memcache
 ```code
-curl -o memcache-2.2.4.tgz http://pecl.php.net/get/memcache-2.2.4.tgz
+apt-get update 
+apt-get install wget
+wget https://github.com/websupport-sk/pecl-memcache/archive/NON_BLOCKING_IO_php7.zip
 
-tar -zxvf memcached-2.2.4.tgz
+unzip NON_BLOCKING_IO_php7.zip
 
-cd memcached-2.2.4
+cd pecl-memcache-NON_BLOCKING_IO_php7
 
 apt-get install zlib1g-dev
 
 phpize && ./configure --enable-memcache && make
 
-cp modules/memcache.so /usr/lib/php/modules/
+cp modules /usr/lib/php/modules/
 
-Note: packaged extension modules are now loaded via the .ini files
-found in the directory /etc/php.d
+vi /etc/php/7.2/cli/php.ini
 
-touch /etc/php.d/memcached.ini
+#add this line at the end
+extension=/usr/lib/php/memcache/modules/memcache.so
 
-echo 'extension=memcache.so' > /etc/php.d/memcached.ini
+rm -rf NON_BLOCKING_IO_php7.zip pecl-memcache-NON_BLOCKING_IO_php7
 ```
 
 for more documentation refer https://laradock.io/
