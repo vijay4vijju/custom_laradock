@@ -50,7 +50,7 @@ apt-get install zlib1g-dev
 
 phpize && ./configure --enable-memcache && make
 
-cp modules /usr/lib/php/modules/
+cp -r modules /usr/lib/php/memcache/modules/
 
 vi /etc/php/7.2/cli/php.ini
 
