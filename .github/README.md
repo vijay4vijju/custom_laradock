@@ -14,7 +14,10 @@
 4. Run docker compser up
 
 ```
+docker-compose bulid -d nginx mysql phpmyadmin redis workspace memcached beanstalkd beanstalkd-console
+
 docker-compose up -d nginx mysql phpmyadmin redis workspace memcached beanstalkd beanstalkd-console
+
 ```
 
 ##Additional .env changes required in all repositoroies
@@ -24,6 +27,8 @@ docker-compose up -d nginx mysql phpmyadmin redis workspace memcached beanstalkd
 2. For Redis host use `redis` instead `127.0.0.1`
 
 
+##Stop the services
+```docker-compose down # to stop the docker```
 
 ##Ssh to workspace to run composer update and migrations
 
