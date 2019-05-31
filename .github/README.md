@@ -5,15 +5,29 @@
 ##Changes
 
 1. Copy .env.example 
-```cp .env.example .env```
+```cp .env-example .env```
 
-2. Change `APP_CODE_PATH_HOST` key if required.
+2. Change `APP_CODE_PATH_HOST` key in .env file if required.
 
 3. Configure nginx sites based on your paths same hosts name update in docker-compose.yml under nginx networks. 
 
+4. Run docker compser up
+
+```
+docker-compose up -d nginx mysql phpmyadmin redis workspace memcached beanstalkd beanstalkd-console
+```
+
+##Additional .env changes required in all repositoroies
+
+1. For mysql host use `mysql` instead `127.0.0.1`
+
+2. For Redis host use `redis` instead `127.0.0.1`
 
 
 
+##Ssh to workspace to run composer update and migrations
+
+```docker-compose exec workspace bash```
 
 
 ##Custom setup for memcache
@@ -39,3 +53,5 @@ touch /etc/php.d/memcached.ini
 
 echo 'extension=memcache.so' > /etc/php.d/memcached.ini
 ```
+
+for more documentation refer https://laradock.io/
