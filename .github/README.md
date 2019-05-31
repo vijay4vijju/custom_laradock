@@ -2,19 +2,14 @@
 
 
 <h4 align="center" style="color:#7d58c2">Use Docker First And Learn About It Later</h4>
-
-<p align="center">
-    <a href="https://zalt.me"><img src="http://forthebadge.com/images/badges/built-by-developers.svg" alt="forthebadge" width="240" >Vijay</a>
-</p>
-
 ##Changes
 
-Copy .env.example 
+1. Copy .env.example 
 ```cp .env.example .env```
 
-Change `APP_CODE_PATH_HOST` key if required.
+2. Change `APP_CODE_PATH_HOST` key if required.
 
-Configure nginx sites based on your paths same hosts name update in docker-compose.yml under nginx networks. 
+3. Configure nginx sites based on your paths same hosts name update in docker-compose.yml under nginx networks. 
 
 
 
