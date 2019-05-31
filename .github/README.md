@@ -50,12 +50,12 @@ apt-get install zlib1g-dev
 
 phpize && ./configure --enable-memcache && make
 
-cp -r modules /usr/lib/php/memcache/modules/
+cp -r modules /usr/lib/php/modules/
 
 vi /etc/php/7.2/cli/php.ini
 
 #add this line at the end
-extension=/usr/lib/php/memcache/modules/memcache.so
+extension=/usr/lib/php/modules/memcache.so
 
 rm -rf NON_BLOCKING_IO_php7.zip pecl-memcache-NON_BLOCKING_IO_php7
 ```
