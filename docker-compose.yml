@@ -211,6 +211,7 @@ services:
             - api.vijay
             - tax.vijay
             - web-api.vijay
+            - w-admin-api.vijay
             - watchback-admin-api.vijay
         backend:
           aliases:
@@ -219,6 +220,7 @@ services:
             - api.vijay
             - tax.vijay
             - web-api.vijay
+            - w-admin-api.vijay
             - watchback-admin-api.vijay
 
 ### Apache Server ########################################
