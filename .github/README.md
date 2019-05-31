@@ -2,6 +2,7 @@
 
 
 <h4 align="center" style="color:#7d58c2">Use Docker First And Learn About It Later</h4>
+
 ##Changes
 
 1. Copy .env.example 
@@ -37,9 +38,7 @@ docker-compose up -d nginx mysql phpmyadmin redis workspace memcached beanstalkd
 
 ##Custom setup for memcache
 ```code
-apt-get install wget
-
-wget http://pecl.php.net/get/memcache-2.2.4.tgz
+curl -o memcache-2.2.4.tgz http://pecl.php.net/get/memcache-2.2.4.tgz
 
 tar -zxvf memcached-2.2.4.tgz
 
